@@ -71,7 +71,7 @@ public class TextManager {
 
     public void searchWord(String query) {
         if (query.length() <= 2) {
-            throw new ImpossibleQueryException("Query contains less than 2 letters.");
+            throw new ImpossibleQueryException("Query contains 2 or less letters.");
         } else if (!StringUtils.isAlpha(query)) {
             throw new ImpossibleQueryException("Query contains symbols other than Unicode letters");
         }
