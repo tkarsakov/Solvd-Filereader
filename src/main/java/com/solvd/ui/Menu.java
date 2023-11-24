@@ -14,13 +14,15 @@ public class Menu {
     }
 
     public void newText() {
-        LOGGER.info("Input raw text or a valid filename to load text from: ");
+        LOGGER.info("Input raw text or a valid filename (relative to current directory) to load text from: ");
         String input = InputHandler.stringInput();
         // Check if input is a valid filename
         if (input.matches("^[\\w-]+\\.[A-Za-z]*$")) {
             textManager.setData(FileHandler.fileToString(input));
+            LOGGER.info("Loaded text: " + "\n" + textManager.getData());
         } else {
             textManager.setData(input);
+            LOGGER.info("Loaded text: " + "\n" + textManager.getData());
         }
     }
 

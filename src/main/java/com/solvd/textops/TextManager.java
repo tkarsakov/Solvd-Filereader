@@ -29,7 +29,7 @@ public class TextManager {
 
     public void countUniqueWords() {
         // Use regex to remove all non-character symbols
-        String strippedData = data.toLowerCase().replaceAll("[^a-z ]", "");
+        String strippedData = data.toLowerCase().replaceAll("[^а-яa-z ]", "");
         ArrayList<String> strings = new ArrayList<>(List.of(StringUtils.split(strippedData)));
         ArrayList<String> outputList = new ArrayList<>();
         for (String s : strings) {
@@ -54,7 +54,7 @@ public class TextManager {
 
     public void countLetters() {
         // Use regex to remove all non-character symbols
-        String strippedData = data.toUpperCase().replaceAll("[^A-Z]", "");
+        String strippedData = data.toUpperCase().replaceAll("[^А-ЯA-Z]", "");
         char[] chars = strippedData.toCharArray();
         StringBuilder output = new StringBuilder(StringUtils.center("NUMBER OF CHARACTERS", 32, "_"));
         output.append("\n");
@@ -77,9 +77,9 @@ public class TextManager {
         }
         String queryLower = query.toLowerCase();
         // Create a regex pattern that represents a singular word surrounded by whitespace
-        Pattern pattern = Pattern.compile("\\s*\\b" + queryLower + "\\b\\s*");
+        Pattern pattern = Pattern.compile("\\s*" + queryLower + "\\s*");
         // Use regex to remove all non-character symbols
-        Matcher matcher = pattern.matcher(data.toLowerCase().replaceAll("[^a-z ]", ""));
+        Matcher matcher = pattern.matcher(data.toLowerCase().replaceAll("[^а-яa-z ]", ""));
         int matchesFound = 0;
         // Using matcher.find() in a while loop allows it to work through the entire string
         // only increasing the matchesFound counter if there are matches left
