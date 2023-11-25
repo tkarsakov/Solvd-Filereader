@@ -1,4 +1,5 @@
 target/
+out/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -34,6 +35,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Logs ###
+/log
+*.log
+
+### Test TXTs ###
+*.txt
 
 ### Mac OS ###
 .DS_Store
