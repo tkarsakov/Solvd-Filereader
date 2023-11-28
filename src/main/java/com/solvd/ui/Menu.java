@@ -61,6 +61,7 @@ public class Menu {
                     }
                     break;
                 case "exit":
+                    FileHandler.stringToFile(textManager.buildOutput());
                     System.exit(0);
                 default:
                     LOGGER.info("Wrong command");
